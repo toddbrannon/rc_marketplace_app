@@ -45,10 +45,10 @@ const Nav = () => {
             </button>
             <Link href="/profile">
               <Image 
-                src="/assets/images/MarketPlaceLogo.svg" 
+                src="/assets/images/ProfilePH.svg" 
                 alt="Profile" 
-                width={37} 
-                height={37} 
+                width={45} 
+                height={45} 
                 className="rounded-full"
               />
             </Link>
@@ -76,7 +76,7 @@ const Nav = () => {
         {isUserLoggedIn ? (
           <div className="flex">
             <Image 
-                src="/assets/images/MarketPlaceLogo.svg" 
+                src="/assets/images/ProfilePH.svg" 
                 alt="Profile" 
                 width={37} 
                 height={37} 

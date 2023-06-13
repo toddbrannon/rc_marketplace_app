@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
+import { brand } from '@constants';
+
 const Nav = () => {
   const isUserLoggedIn = false;
 
@@ -30,7 +32,7 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className="logo_text">MarketPlaceApp</p>
+        <p className="logo_text">{ brand }</p>
       </Link>
 
       {/* Desktop Navigation - Center */}

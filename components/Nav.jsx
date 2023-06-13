@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 const Nav = () => {
-  const isUserLoggedIn = true;
+  const isUserLoggedIn = false;
 
   const [providers, setProviders] = useState(null)
 
@@ -33,7 +33,24 @@ const Nav = () => {
         <p className="logo_text">MarketPlaceApp</p>
       </Link>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation - Center */}
+      {/* { Sell, Buy, Find a Partner } */}
+      <div className="sm:flex hidden">
+        <div className="flex gap-3 md:gap-5">
+          <Link href="seller-path" className="nav_link">
+              Sell
+          </Link>
+          <Link href="buyer-path" className="nav_link">
+              Buy
+          </Link>
+          <Link href="partnership-path" className="nav_link">
+              Find a Partner
+          </Link>
+        </div>
+      </div>
+
+      {/* Desktop Navigation - Right Side */}
+
       <div className="sm:flex hidden">
         {isUserLoggedIn ? (
           <div className="flex gap-3 md:gap-5">
@@ -47,26 +64,35 @@ const Nav = () => {
               <Image 
                 src="/assets/images/ProfilePH.svg" 
                 alt="Profile" 
-                width={45} 
-                height={45} 
+                width={37} 
+                height={37} 
                 className="rounded-full"
               />
             </Link>
           </div>
         ): (
-          <>
-            {providers && 
-              Object.values(providers).map((provider) => (
-                <button
-                  type="button"
-                  key={provider.name}
-                  onClick = {() => signIn(provider.id)}
-                  className="black_btn"
-                >
-                  Sign in with {provider.name}
-                </button>
-              ))}
-          </>
+          <div className="flex gap-3 md:gap-5">
+            <Link href="create-listing" className="light_btn">
+              Join Now
+            </Link>
+            <button type="button" onClick={signIn} className="outline_btn">
+              Sign In
+            </button>
+          </div>
+          // <>
+          //   {providers && 
+          //     Object.values(providers).map((provider) => (
+          //       <button
+          //         type="button"
+          //         key={provider.name}
+          //         onClick = {() => signIn(provider.id)}
+          //         className="black_btn"
+          //       >
+          //         Sign in with {provider.name}
+          //       </button>
+          //     ))}
+          // </>
+          
         )}
       </div>
 

@@ -24,7 +24,7 @@ const Footer = () => (
     </div> */}
 
 {/* Flowbite sample : https://github.com/adrianhajdin/project_next13_car_showcase/blob/main/components/Footer.tsx */}
-<footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-cyan-700 dark:border-gray-200">
+<footer class="bottom-0 left-0 z-20 w-screen p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-cyan-700 dark:border-gray-200">
     
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">

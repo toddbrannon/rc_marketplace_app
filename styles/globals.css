@@ -89,7 +89,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col h-screen max-w-7xl mx-auto sm:px-16 px-6;
 }
 
 .hero {
@@ -97,7 +97,7 @@
 }
 
 .hero__title {
-  @apply 2xl:text-[72px] sm:text-[64px] text-[50] font-extrabold
+  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold
 }
 
 .hero__subtitle {

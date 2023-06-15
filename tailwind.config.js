@@ -16,6 +16,7 @@ module.exports = {
         'cyan_gradient': 'bg-gradient-to-r from-cyan-400 via-cyan-200 to-cyan-100',
         'dark-blue': '#111827',
         'bg-dark-blue': '#111827',
+        'bg-cyan-gradient': 'bg-gradient-to-r from-cyan-400 via-cyan-200 to-cyan-100',
       },
     },
   },

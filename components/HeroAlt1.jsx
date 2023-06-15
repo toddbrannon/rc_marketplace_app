@@ -1,25 +1,46 @@
-import image from 'next/image';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
     
 <section className="bg-inherit dark:bg-inherit">
-    <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-        <div className="p-8 md:p-12 mb-16 mt-12">
+    {/* START Entire Page Level Div */}
+    <div className="py-8 px-4 lg:py-16">
+        {/* START Hero Div */}
+        <div className="p-8 mx-auto max-w-screen-xl md:p-12 mb-2 mt-2">
+            <div className="grid grid-cols-2 gap-8">
+                <div class="p-8 md:p-12 mb-8 mt-16 w-full">
+                    <h1 className="text-gray-100 dark:text-gray-100 text-3xl md:text-7xl font-extrabold mb-2">Sell</h1>
+                    <h1 className="text-gray-100 dark:text-gray-100 text-3xl md:text-7xl font-extrabold mb-2">Buy</h1>
+                    <h1 className="cyan_gradient dark:cyan_gradient text-3xl md:text-7xl font-extrabold mb-2">Connect.</h1>
+                    <p className="text-lg font-normal text-gray-500 dark:text-gray-300 mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, 
+                    ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius. 
+                    </p>
+                    <a href="#" className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-cyan-500 hover:bg-cyan-400 transition duration-300 ease-in-out focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                        How it works
+                        <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+                </div>
+                <div class="p-8 md:p-12 mb-8 mt-8 w-full">
+                    
+                    {/* <img class="w-96 h-96" src="/assets/images/BlueMinimalistHandShake.svg" alt="image description"/> */}
+                    <Image
+                        src="/assets/images/MarketPlaceLogo.svg"
+                        alt="handshake hero image"
+                        width={96}
+                        height={96}
+                        className='object-contain w-full h-full'
+                    />
 
-            <h1 className="text-gray-100 dark:text-gray-100 text-3xl md:text-7xl font-extrabold mb-2">Sell</h1>
-            <h1 className="text-gray-100 dark:text-gray-100 text-3xl md:text-7xl font-extrabold mb-2">Buy</h1>
-            <h1 className="cyan_gradient dark:cyan_gradient text-3xl md:text-7xl font-extrabold mb-2">Connect.</h1>
-            <p className="text-lg font-normal text-gray-500 dark:text-gray-300 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, 
-            ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius. 
-            </p>
-            <a href="#" className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-cyan-500 hover:bg-cyan-400 transition duration-300 ease-in-out focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                Learn more
-                <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
+                </div>
+            </div>
+            
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* END Hero Div */}
+
+        {/* START Sellers and Buyers Div */}
+        <div className="grid md:grid-cols-2 gap-8 mx-auto max-w-screen-xl">
             <div className="bg-gray-50 dark:bg-dark-blue border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
                 {/* <a href="#" className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                     <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -32,7 +53,7 @@ const Hero = () => {
                     List your business for sale with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.
                 </p>
-                <a href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline font-medium text-lg inline-flex items-center">Read more
+                <a href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline font-medium text-lg inline-flex items-center">Learn more
                     <svg aria-hidden="true" className="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
@@ -50,25 +71,61 @@ const Hero = () => {
                     View business sale listings here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.
                   </p>
-                <a href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline font-medium text-lg inline-flex items-center">Read more
+                <a href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline font-medium text-lg inline-flex items-center">Learn more
                     <svg aria-hidden="true" className="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
                 </a>
             </div>
         </div>
-        <div class="p-8 md:p-12 mb-8 mt-16 w-screen">
-            
-            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Finding a partner</h1>
-            <p class="text-lg font-normal text-gray-200 dark:text-gray-200 mb-6">Connect with other buyers and build partnerships. Lorem ipsum dolor sit amet, 
-                  consectetur adipiscing elit. Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.</p>
-                <a href="#" className="text-cyan-600 dark:text-cyan-500 hover:underline font-medium text-lg inline-flex items-center">Read more
-                  <svg aria-hidden="true" className="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                  </svg>
-                </a>
+        {/* End Sellers & Buyers Div */}
+
+        {/* START Build Partnerships Div */}
+        <div class="p-8 md:p-12 mb-8 mt-24 bg-gray-200 w-screen">
+            <div className="mx-auto my-24 max-w-screen-xl">
+                <h1 class="text-blue-950 dark:text-blue-950 text-3xl md:text-7xl font-extrabold mb-2">Build Partnerships</h1>
+                <p class="text-lg font-normal text-blue-950 dark:text-blue-950 mb-6">Connect with other buyers and build partnerships. Lorem ipsum dolor sit amet, 
+                      consectetur adipiscing elit. Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.</p>
+                    <a href="#" className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-full bg-cyan-500 hover:bg-cyan-400 transition duration-300 ease-in-out focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                        Connect Now
+                        <svg aria-hidden="true" className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </a>
+            </div>
         </div>
-        
+        {/* END Build Partnerships Div */}
+
+    </div>
+    {/* END Page Div */}
+
+    {/* START Messaging & Boost section */}
+    <div className="grid md:grid-cols-3 gap-8 mb-20 mx-auto max-w-screen-xl">
+        <div className="card bg-cyan-gradient dark:bg-cyan-gradient border border-gray-200 dark:border-gray-200 rounded-lg p-8 md:p-12">
+            <div className="card-body">
+              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Messaging</h2>
+              <p>Lorem ipsum</p>
+              <div className="card-actions justify-end">
+                <button className="dark_btn">Details</button>
+              </div>
+            </div>
+        </div>
+        <div className="card bg-cyan-gradient dark:bg-cyan-gradient border border-gray-200 dark:border-gray-200 rounded-lg p-8 md:p-12">
+            <div className="card-body">
+              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Boost Feature</h2>
+              <p>Lorem ipsum</p>
+              <div className="card-actions justify-end">
+                <button className="dark_btn">Details</button>
+              </div>
+            </div>
+        </div>
+        <div className="card bg-cyan-gradient dark:bg-cyan-gradient border border-gray-200 dark:border-gray-200 rounded-lg p-8 md:p-12">
+            <div className="card-body">
+              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Other</h2>
+              <p>Lorem ipsum</p>
+              <div className="card-actions justify-end">
+                <button className="dark_btn">Details</button>
+              </div>
+            </div>
+        </div>
     </div>
 </section>
 

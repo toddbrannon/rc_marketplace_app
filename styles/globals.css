@@ -28,7 +28,8 @@
 
 .main:before {
   /* background: radial-gradient(circle, rgba(23, 37, 84, 0) 0, #172554 100%); */
-  background: linear-gradient(45deg, rgba(23, 37, 84, 0) 0, #0C4A6E 100%);
+  /* background: linear-gradient(45deg, rgba(23, 37, 84, 0) 0, #0C476B 100%); */
+  background: linear-gradient(45deg, rgba(17, 24, 39, .9) 10%, #0C476B 100%);
   position: absolute;
   content: "";
   z-index: 2;
@@ -89,19 +90,27 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col h-screen max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col h-full max-w-7xl mx-auto sm:px-16 px-6;
 }
 
 .hero {
-  @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440] mx-auto;
+  @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440] mx-auto my-20;
 }
 
 .hero__title {
-  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold
+  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold justify-items-start;
 }
 
 .hero__subtitle {
-  @apply text-[27px] text-gray-50 font-light mt-5
+  @apply text-[20px] text-gray-50 font-light mt-5
+}
+
+.howitworks {
+  @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440] mx-auto my-20 bg-indigo-800;
+}
+
+.howitworks__title {
+  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold text-center;
 }
 
 .nav_link {
@@ -113,11 +122,11 @@
 }
 
 .light_btn {
-  @apply rounded-full border border-cyan-500 bg-cyan-500 py-1.5 px-5 text-white transition-all hover:bg-gray-100 hover:text-cyan-500 text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-cyan-500 bg-cyan-500 py-1.5 px-5 text-white hover:bg-cyan-400 transition duration-300 ease-in-out text-center text-sm font-inter flex items-center justify-center;
 }
 
 .outline_btn { 
-  @apply rounded-full border border-white bg-transparent py-1.5 px-5 text-white transition-all hover:bg-white hover:text-cyan-500 text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-white bg-transparent py-1.5 px-5 text-white hover:bg-white hover:text-cyan-500 transition duration-300 ease-in-out text-center text-sm font-inter flex items-center justify-center;
 }
 
 .head_text {
@@ -125,7 +134,7 @@
 }
 
 .cyan_gradient {
-  @apply bg-gradient-to-r from-cyan-400 via-cyan-200 to-cyan-100 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-cyan-500 via-cyan-100 to-cyan-100 bg-clip-text text-transparent;
 }
 
 .orange_gradient {

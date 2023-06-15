@@ -17,13 +17,13 @@ const RootLayout = ({ children }) => {
                 <div className="main bg-indigo-950">
                     {/* <div className="gradient"/> */}
                 </div>
-                
-                <main className="app">
                 <Nav />
+                <main className="app">
+                
                     {children}
                     
                 </main>
-                <Footer />
+                <Footer /> 
             </Provider>
         </body>
     </html>

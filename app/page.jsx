@@ -1,12 +1,12 @@
 import Feed from '@components/Feed';
-import Hero from '@components/HeroAlt1';
+import Landing from '@components/Landing';
 import Middle from '@components/Middle';
 import LowerThird from '@components/LowerThird';
 
 const Home = () => {
   return (
     <main className="overflow-hidden">
-      <Hero />
+      <Landing />
       
     </main>
   )

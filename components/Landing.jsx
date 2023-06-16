@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Hero = () => {
+const Landing = () => {
   return (
     
 <section className="bg-inherit dark:bg-inherit">
@@ -138,4 +138,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Landing

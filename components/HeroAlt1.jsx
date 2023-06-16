@@ -48,7 +48,7 @@ const Hero = () => {
                     </svg>
                     Design
                 </a> */}
-                <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Sellers</h2>
+                <h2 className="cyan_gradient dark:cyan_gradient text-3xl font-extrabold mb-2">Sellers</h2>
                 <p className="text-lg font-normal text-gray-200 dark:text-gray-300 mb-4">
                     List your business for sale with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.
@@ -66,7 +66,7 @@ const Hero = () => {
                     </svg>
                     Code
                 </a> */}
-                <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Buyers</h2>
+                <h2 className="cyan_gradient dark:cyan_gradient text-3xl font-extrabold mb-2">Buyers</h2>
                   <p className="text-lg font-normal text-gray-200 dark:text-gray-300 mb-4">
                     View business sale listings here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.
@@ -81,7 +81,7 @@ const Hero = () => {
         {/* End Sellers & Buyers Div */}
 
         {/* START Build Partnerships Div */}
-        <div class="p-8 md:p-12 mb-8 mt-24 bg-gray-200 w-screen">
+        <div class="p-8 md:p-12 mb-8 mt-24 partnership-gradient w-screen">
             <div className="mx-auto my-24 max-w-screen-xl">
                 <h1 class="text-blue-950 dark:text-blue-950 text-3xl md:text-7xl font-extrabold mb-2">Build Partnerships</h1>
                 <p class="text-lg font-normal text-blue-950 dark:text-blue-950 mb-6">Connect with other buyers and build partnerships. Lorem ipsum dolor sit amet, 
@@ -99,30 +99,33 @@ const Hero = () => {
 
     {/* START Messaging & Boost section */}
     <div className="grid md:grid-cols-3 gap-8 mb-20 mx-auto max-w-screen-xl">
-        <div className="card bg-cyan-gradient dark:bg-cyan-gradient border border-gray-200 dark:border-gray-200 rounded-lg p-8 md:p-12">
+        <div className="card border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             <div className="card-body">
-              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Messaging</h2>
-              <p>Lorem ipsum</p>
+              <h2 className="card-head cyan_gradient dark:cyan_gradient">Start a Conversation</h2>
+              <p className="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, ac consectetur 
+                dolor placerat a. In eu nulla nec orci vulputate varius.</p>
               <div className="card-actions justify-end">
-                <button className="dark_btn">Details</button>
+                <button className="light_btn">Find Out More</button>
               </div>
             </div>
         </div>
-        <div className="card bg-cyan-gradient dark:bg-cyan-gradient border border-gray-200 dark:border-gray-200 rounded-lg p-8 md:p-12">
+        <div className="card border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             <div className="card-body">
-              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Boost Feature</h2>
-              <p>Lorem ipsum</p>
+              <h2 className="card-head cyan_gradient dark:cyan_gradient">Boost Your Listing</h2>
+              <p className="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, ac consectetur 
+                dolor placerat a. In eu nulla nec orci vulputate varius.</p>
               <div className="card-actions justify-end">
-                <button className="dark_btn">Details</button>
+                <button className="light_btn">Find Out More</button>
               </div>
             </div>
         </div>
-        <div className="card bg-cyan-gradient dark:bg-cyan-gradient border border-gray-200 dark:border-gray-200 rounded-lg p-8 md:p-12">
+        <div className="card border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             <div className="card-body">
-              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">Other</h2>
-              <p>Lorem ipsum</p>
-              <div className="card-actions justify-end">
-                <button className="dark_btn">Details</button>
+              <h2 className="card-head cyan_gradient dark:cyan_gradient">Partner with Others</h2>
+              <p className="card-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, ac consectetur 
+                dolor placerat a. In eu nulla nec orci vulputate varius.</p>
+              <div className="card-actions">
+                <button className="light_btn">Find Out More</button>
               </div>
             </div>
         </div>

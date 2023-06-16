@@ -145,6 +145,30 @@
   @apply bg-gradient-to-r from-cyan-500 via-cyan-300 to-cyan-200;
 }
 
+.partnership-gradient {
+  @apply bg-gradient-to-r from-cyan-100 via-cyan-100 to-cyan-200;
+}
+
+.card {
+  @apply bg-white dark:bg-dark-blue;
+}
+
+.card-head {
+  @apply text-3xl font-extrabold mb-2;
+}
+
+.card-content {
+  @apply text-cyan-900 dark:text-gray-100 text-lg;
+}
+
+.card-actions {
+  @apply flex flex-col items-center justify-between mt-5;
+}
+
+.card-body {
+  @apply text-gray-900 dark:text-white;
+}
+
 .orange_gradient {
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }

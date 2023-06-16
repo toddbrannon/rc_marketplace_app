@@ -81,7 +81,7 @@ const Hero = () => {
         {/* End Sellers & Buyers Div */}
 
         {/* START Build Partnerships Div */}
-        <div class="p-8 md:p-12 mb-8 mt-24 partnership-gradient w-screen">
+        <div class="p-8 md:p-12 mb-8 mt-24 partnership-gradientmessa w-screen">
             <div className="mx-auto my-24 max-w-screen-xl">
                 <h1 class="text-blue-950 dark:text-blue-950 text-3xl md:text-7xl font-extrabold mb-2">Build Partnerships</h1>
                 <p class="text-lg font-normal text-blue-950 dark:text-blue-950 mb-6">Connect with other buyers and build partnerships. Lorem ipsum dolor sit amet, 

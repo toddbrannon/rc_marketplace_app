@@ -12,7 +12,7 @@ const Landing = () => {
     <div className="py-8 px-4 lg:py-16">
 
         {/* START Hero Div */}
-          <Hero />
+          {/* <Hero /> */}
         {/* END Hero Div */}
 
         {/* START Sellers and Buyers Div */}

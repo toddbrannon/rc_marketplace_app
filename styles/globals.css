@@ -156,7 +156,7 @@
 }
 
 .card {
-  @apply bg-white dark:bg-dark-blue;
+  @apply bg-white;
 }
 
 .card-head {
@@ -164,7 +164,7 @@
 }
 
 .card-content {
-  @apply text-cyan-900 dark:text-gray-100 text-sm md:text-lg;
+  @apply text-cyan-900 text-sm md:text-lg;
 }
 
 .card-actions {
@@ -172,7 +172,7 @@
 }
 
 .card-body {
-  @apply text-gray-900 dark:text-white;
+  @apply text-gray-900;
 }
 
 .orange_gradient {

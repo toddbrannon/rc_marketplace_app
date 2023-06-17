@@ -20,6 +20,21 @@ module.exports = {
         'bg-cyan-gradient': 'bg-gradient-to-r from-cyan-400 via-cyan-200 to-cyan-100',
         'partnerships-gradient': 'bg-gradient-to-r from-cyan-100 via-cyan-200 to-cyan-300'
       },
+      'animation': {
+        'text':'text 5s ease infinite;',
+      },
+      'keyframes': {
+          'text': {
+              '0%, 100%': {
+                 'background-size':'200% 200%',
+                  'background-position': 'left center'
+              },
+              '50%': {
+                 'background-size':'200% 200%',
+                  'background-position': 'right center'
+              }
+          },
+      },
     },
   },
   plugins: [],

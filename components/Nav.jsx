@@ -22,19 +22,25 @@ const Nav = () => {
     setProviders();
   }, [])
 
+  const [currentState, setCurrentState] = useState('initial');
+
+  const handleLogoClick = () => {
+    setCurrentState('initial');
+  };
+
   return (
     <nav className="flex-between fixed z-20 border-b w-full mb-16 pt-3 pb-3 px-8 top-0 border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
       
-      <Link href="/" className="flex gap-2 flex-center">
+      <a href="/" className="flex gap-2 flex-center" onClick={handleLogoClick}>
         <Image
           src="/assets/images/MarketPlaceLogo.svg"
           alt="RC Marketplace Logo"
           width={30}
           height={30}
-          className='object-contain'
+          className="object-contain"
         />
-        <p className="logo_text">{ brand }</p>
-      </Link>
+        <p className="logo_text">{brand}</p>
+      </a>
 
       {/* Desktop Navigation - Center */}
       {/* { Sell, Buy, Find a Partner } */}

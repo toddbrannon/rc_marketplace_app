@@ -99,6 +99,7 @@
   @apply relative z-10 flex justify-center items-center flex-col h-full max-w-7xl mx-auto sm:px-16 px-6;
 }
 
+
 .hero {
   @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440] mx-auto my-20;
 }

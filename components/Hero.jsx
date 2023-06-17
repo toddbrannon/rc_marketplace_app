@@ -6,7 +6,9 @@ const Hero = () => {
             <div className="hero-cols grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="p-8 md:p-12 mb-8 mt-16 w-full">
                     <h1 className="text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Sell</h1>
-                    <h1 className="text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Buy</h1>
+                    <h1 className="text-5xl md:text-7xl font-extrabold mb-2 bg-gradient-to-r bg-clip-text  text-transparent 
+            from-cyan-300 via-indigo-500 to-cyan-100
+            animate-text">Buy</h1>
                     <h1 className="cyan_gradient dark:cyan_gradient text-5xl md:text-7xl font-extrabold mb-2">Connect.</h1>
                     <p className="text-lg font-normal text-gray-500 dark:text-gray-300 mb-6">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, 

@@ -1,11 +1,12 @@
+'use client';
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { brand, home_url, twitter_icon, linkedin_icon, facebook_icon, instagram_icon, Copyright } from "@constants";
+import { footerLinksCompany, footerLinksLegal } from "@constants";
 
-import { footerLinks } from "@constants";
-
-const Footer = () => (
+const Footer = ({ setCurrentState }) => (
 
 <div className='flex flex-col text-gray-100 mt-5 border-top border-gray-100'>
 
@@ -29,18 +30,13 @@ const Footer = () => (
               <div>
                 <h2 className="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Company</h2>
                 <ul className="text-gray-500 dark:text-gray-200 font-medium">
-                    <li className="mb-4">
-                        <a href="#" className=" hover:underline">About</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Careers</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Brand Center</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="#" className="hover:underline">Blog</a>
-                    </li>
+                    {footerLinksCompany.map((link, index) => (
+                        <li className="mb-4" key={index}>
+                          <a href="#" className="hover:underline" onClick={() => setCurrentState(link.state)}>
+                            {link.label}
+                          </a>
+                        </li>
+                    ))}
                 </ul>
               </div>
               <div>
@@ -57,12 +53,13 @@ const Footer = () => (
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                   <ul className="text-gray-600 dark:text-gray-200 font-medium">
-                      <li className="mb-4">
-                          <a href="#" className="hover:underline">Privacy Policy</a>
-                      </li>
-                      <li>
-                          <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-                      </li>
+                    {footerLinksLegal.map((link, index) => (
+                        <li className="mb-4" key={index}>
+                          <a href="#" className="hover:underline" onClick={() => setCurrentState(link.state)}>
+                            {link.label}
+                          </a>
+                        </li>
+                    ))}
                   </ul>
               </div>
           </div>

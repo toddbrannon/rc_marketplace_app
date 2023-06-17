@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { brand, home_url, twitter_icon, linkedin_icon, facebook_icon, instagram_icon, Copyright } from "@constants";
-import { footerLinksCompany, footerLinksLegal } from "@constants";
+import { footerLinksCompany, footerLinksLegal, socialIcons } from "@constants";
 
 const Footer = ({ setCurrentState }) => (
 
@@ -32,7 +32,7 @@ const Footer = ({ setCurrentState }) => (
                 <ul className="text-gray-500 dark:text-gray-200 font-medium">
                     {footerLinksCompany.map((link, index) => (
                         <li className="mb-4" key={index}>
-                          <a href="#" className="hover:underline" onClick={() => setCurrentState(link.state)}>
+                          <a href="#" className="footer-link" onClick={() => setCurrentState(link.state)}>
                             {link.label}
                           </a>
                         </li>
@@ -43,10 +43,10 @@ const Footer = ({ setCurrentState }) => (
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
                   <ul className="text-gray-600 dark:text-gray-200 font-medium">
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Twitter</a>
+                          <a href="https://github.com/themesberg/flowbite" className="footer-link">Twitter</a>
                       </li>
                       <li>
-                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Contact Us</a>
+                          <a href="https://discord.gg/4eeurUVvTy" className="footer-link">Contact Us</a>
                       </li>
                   </ul>
               </div>
@@ -55,7 +55,7 @@ const Footer = ({ setCurrentState }) => (
                   <ul className="text-gray-600 dark:text-gray-200 font-medium">
                     {footerLinksLegal.map((link, index) => (
                         <li className="mb-4" key={index}>
-                          <a href="#" className="hover:underline" onClick={() => setCurrentState(link.state)}>
+                          <a href="#" className="footer-link" onClick={() => setCurrentState(link.state)}>
                             {link.label}
                           </a>
                         </li>
@@ -69,22 +69,14 @@ const Footer = ({ setCurrentState }) => (
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-200">© { Copyright } <a href={ home_url } className="hover:underline">{brand}</a>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-              <a href="#" className="text-gray-200 hover:text-gray-900 dark:hover:text-white">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d={linkedin_icon} clip-rule="evenodd" /></svg>
-                  <span className="sr-only">LinkedIn page</span>
-              </a>
-              <a href="#" className="text-gray-200 hover:text-gray-900 dark:hover:text-white">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d={facebook_icon} clip-rule="evenodd" /></svg>
-                  <span className="sr-only">Facebook page</span>
-              </a>
-              <a href="#" className="text-gray-200 hover:text-gray-900 dark:hover:text-white">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d={instagram_icon} clip-rule="evenodd" /></svg>
-                  <span className="sr-only">Instagram page</span>
-              </a>
-              <a href="#" className="text-gray-200 hover:text-gray-900 dark:hover:text-white">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d={twitter_icon} /></svg>
-                  <span className="sr-only">Twitter page</span>
-              </a>
+                    {socialIcons.map((link, index) => (
+                        <li className="mb-4 list-none" key={index}>
+                          <a href="#" className="social-link">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d={link.state} clip-rule="evenodd" /></svg>
+                            <span className="sr-only">LinkedIn page</span>
+                          </a>
+                        </li>
+                    ))}
           </div>
       </div>
     </div>

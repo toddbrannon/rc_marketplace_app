@@ -96,9 +96,13 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col h-full max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col h-full max-w-7xl w-auto mx-auto sm:px-16 px-6;
 }
 
+.transition-colors-underlined {
+  /* Transition color over 300ms */
+  transition: color 300ms;
+}
 
 .hero {
   @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440] mx-auto my-20;
@@ -120,8 +124,24 @@
   @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold text-center;
 }
 
+.w-nav {
+  width: 102%;
+}
+
 .nav_link {
-  @apply text-gray-200 hover:text-white transition-all py-1.5 px-5;
+  @apply text-gray-200 hover:text-cyan-200 transition duration-300 ease-in-out py-1.5 px-5;
+}
+
+.footer-link {
+  @apply text-gray-200 hover:text-cyan-200 duration-300 ease-in-out py-1.5 px-5;
+}
+
+.social-link {
+  @apply text-gray-200 hover:text-cyan-900 dark:hover:text-cyan-300 transition-colors duration-300 ease-in-out;
+}
+
+.learn-more {
+  @apply text-cyan-600 dark:text-cyan-500 transition-colors-underlined hover:underline hover:text-blue-900 ease-in-out font-medium text-lg inline-flex items-center;
 }
 
 .black_btn {

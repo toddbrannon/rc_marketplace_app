@@ -9,6 +9,7 @@ import BrandCenter from '@components/BrandCenter';
 import Blog from '@components/Blog';
 import PrivacyPolicy from '@components/PrivacyPolicy';
 import TermsAndConditions from '@components/TermsAndConditions';
+import HowItWorks from '@components/HowItWorks';
 
 
 const Home = () => {
@@ -17,14 +18,15 @@ const Home = () => {
 
   return (
     <main className="overflow-hidden">
-      <Nav setCurrentState={setCurrentState} />
+      {/* <Nav setCurrentState={setCurrentState} /> */}
 
       {currentState === 'initial' && <Landing />}
       {currentState === 'about' && <About />}
       {currentState === 'brandCenter' && <BrandCenter />}
       {currentState === 'blog' && <Blog />}
       {currentState === 'privacyPolicy' && <PrivacyPolicy />}
-      {currentState === 'termsAndConditions' && <TermsAndConditions />}      
+      {currentState === 'termsAndConditions' && <TermsAndConditions />}   
+      {currentState === 'howItWorks' && <HowItWorks />}     
       <Footer setCurrentState={setCurrentState} /> 
       
     </main>

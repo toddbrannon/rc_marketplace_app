@@ -29,9 +29,9 @@ const Nav = () => {
   };
 
   return (
-    <nav className="flex-between fixed z-20 border-b w-full mb-16 pt-3 pb-3 px-8 top-0 border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <nav className="flex-between fixed z-20 border-b w-nav mb-16 pt-3 pb-3 px-16 top-0 border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
       
-      <a href="/" className="flex gap-2 flex-center" onClick={handleLogoClick}>
+      <a href="/" className="flex gap-2 flex-center">
         <Image
           src="/assets/images/MarketPlaceLogo.svg"
           alt="RC Marketplace Logo"

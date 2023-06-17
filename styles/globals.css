@@ -289,3 +289,121 @@
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
 }
 /* END: Footer styles */
+
+/* START: Hero font animation styles */
+
+.section-process {
+  --gradient-color-1: #ef008f;
+  --gradient-color-2: #22d3ee;
+  --gradient-color-3: #a5b4fc;
+  --gradient-color-4: #c9c9c9;
+}
+.section-process
+  .process-steps-container
+  .process-step-container
+  .process-step-title-container {
+  margin-top: -16px;
+  position: relative;
+}
+.section-process
+  .process-steps-container
+  .process-step-container
+  .process-step-title-container
+  .process-step-title,
+.section-process
+  .process-steps-container
+  .process-step-container
+  .process-step-title-container
+  .process-step-title-overlay {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Inter", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  /* font-size: 156px;
+  font-weight: 900; */
+  margin: 0;
+  line-height: 1.3em;
+  letter-spacing: -4px;
+}
+.section-process
+  .process-steps-container
+  .process-step-container
+  .process-step-title-container
+  .process-step-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  padding-right: 30px;
+  height: 100%;
+  opacity: 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.section-process
+  .process-steps-container
+  .process-step-container.process-step-1
+  .process-step-title-overlay {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-color-2),
+    var(--gradient-color-3)
+  );
+  animation: animated-gradient-title-1 8s infinite;
+}
+.section-process
+  .process-steps-container
+  .process-step-container.process-step-2
+  .process-step-title-overlay {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-color-2),
+    var(--gradient-color-3)
+  );
+  animation: animated-gradient-title-2 8s infinite;
+}
+.section-process
+  .process-steps-container
+  .process-step-container.process-step-3
+  .process-step-title-overlay {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-color-2),
+    var(--gradient-color-3)
+  );
+  animation: animated-gradient-title-3 8s infinite;
+}
+@keyframes animated-gradient-title-1 {
+  0%,
+  16.667%,
+  100% {
+    opacity: 1;
+  }
+  33.333%,
+  83.333% {
+    opacity: 0;
+  }
+}
+@keyframes animated-gradient-title-2 {
+  0%,
+  16.667%,
+  66.667%,
+  100% {
+    opacity: 0;
+  }
+  33.333%,
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes animated-gradient-title-3 {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  66.667%,
+  83.333% {
+    opacity: 1;
+  }
+}
+
+/* END: Hero font animation styles */

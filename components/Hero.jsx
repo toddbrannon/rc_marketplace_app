@@ -5,11 +5,41 @@ const Hero = () => {
     <div className="p-8 mx-auto max-w-screen-xl md:p-12 mb-2 mt-2">
             <div className="hero-cols grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="p-8 md:p-12 mb-8 mt-16 w-full">
-                    <h1 className="text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Sell</h1>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-2 bg-gradient-to-r bg-clip-text  text-transparent 
-            from-cyan-300 via-indigo-500 to-cyan-100
-            animate-text">Buy</h1>
-                    <h1 className="cyan_gradient dark:cyan_gradient text-5xl md:text-7xl font-extrabold mb-2">Connect.</h1>
+
+                    {/* <section className="section-process">
+                        <h1 className="process-step-title text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Sell</h1>
+                        <div className="process-step-title-overlay">Sell</div>
+                        <h1 className="process-step-title text-5xl md:text-7xl font-extrabold mb-2 bg-gradient-to-r bg-clip-text  text-transparent from-cyan-300 via-indigo-500 to-cyan-100 animate-text">Buy</h1>
+                        <div className="process-step-title-overlay">Buy</div>
+                        <h1 className="process-step-title cyan_gradient dark:cyan_gradient text-5xl md:text-7xl font-extrabold mb-2">Connect.</h1>
+                        <div className="process-step-title-overlay">Connect.</div>
+                    </section> */}
+
+                <section class="section-process">
+                  <div class="section-container">
+                    <div class="process-steps-container container-medium with-padding">
+                      <div class="process-step-container process-step-1">
+                        <div class="process-step-title-container">
+                          <h1 class="process-step-title text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Sell</h1>
+                          <div class="process-step-title-overlay text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Sell</div>
+                        </div>
+                      </div>
+                      <div class="process-step-container process-step-2">
+                        <div class="process-step-title-container">
+                        <h1 class="process-step-title text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Buy</h1>
+                        <div class="process-step-title-overlay text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Buy</div>
+                        </div>
+                      </div>
+                      <div class="process-step-container process-step-3">
+                        <div class="process-step-title-container">
+                        <h1 class="process-step-title text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Connect.</h1>
+                        <div class="process-step-title-overlay text-gray-100 dark:text-gray-100 text-5xl md:text-7xl font-extrabold mb-2">Connect.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                    
                     <p className="text-lg font-normal text-gray-500 dark:text-gray-300 mb-6">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod dignissim nisl, 
                     ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius. 

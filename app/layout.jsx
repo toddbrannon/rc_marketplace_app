@@ -10,6 +10,7 @@ export const metadata = {
 }
 
 const RootLayout = ({ children }) => {
+
   return (
     <html lang="en">
         <body>

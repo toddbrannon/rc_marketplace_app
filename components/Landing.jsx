@@ -10,9 +10,9 @@ const Landing = () => {
 <section className="bg-inherit dark:bg-inherit">
     {/* START Entire Page Level Div */}
     <div className="py-8 px-4 lg:py-16">
-      
+
         {/* START Hero Div */}
-          <Hero />
+          {/* <Hero /> */}
         {/* END Hero Div */}
 
         {/* START Sellers and Buyers Div */}

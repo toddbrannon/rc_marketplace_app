@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 const SellerBuyer = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-8 mx-auto max-w-screen-xl">
+    
+    <div className="grid md:grid-cols-2 gap-8 mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20">
         <div className="bg-gray-50 dark:bg-dark-blue border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             {/* <a href="#" className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                 <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -11,7 +12,7 @@ const SellerBuyer = () => {
                 Design
             </a> */}
             <h2 className="cyan_gradient dark:cyan_gradient text-3xl font-extrabold mb-2">Sellers</h2>
-            <p className="text-lg font-normal text-gray-200 dark:text-gray-300 mb-4">
+            <p className="text-sm md:text-lg font-normal text-gray-200 dark:text-gray-300 mb-4">
                 List your business for sale with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.
             </p>
@@ -29,7 +30,7 @@ const SellerBuyer = () => {
                 Code
             </a> */}
             <h2 className="cyan_gradient dark:cyan_gradient text-3xl font-extrabold mb-2">Buyers</h2>
-              <p className="text-lg font-normal text-gray-200 dark:text-gray-300 mb-4">
+              <p className="text-sm md:text-lg font-normal text-gray-200 dark:text-gray-300 mb-4">
                 View business sale listings here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Sed euismod dignissim nisl, ac consectetur dolor placerat a. In eu nulla nec orci vulputate varius.
               </p>
@@ -40,7 +41,7 @@ const SellerBuyer = () => {
             </a>
         </div>
     </div>
-    
+
     
   )
 }

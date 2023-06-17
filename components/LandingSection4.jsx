@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const LandingSection4 = () => {
   return (
-    <div className="grid md:grid-cols-3 gap-8 mb-20 mx-auto max-w-screen-xl">
+    <div className="grid lg:grid-cols-3 gap-8 mb-20 mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20">
         <div className="card border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             <div className="card-body">
               <h2 className="card-head cyan_gradient dark:cyan_gradient">Start a Conversation</h2>

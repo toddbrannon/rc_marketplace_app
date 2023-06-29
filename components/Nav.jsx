@@ -8,7 +8,7 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import { brand } from '@constants';
 
 const Nav = () => {
-  const isUserLoggedIn = false;
+  const isUserLoggedIn = true;
 
   const [providers, setProviders] = useState(null)
 
@@ -63,6 +63,9 @@ const Nav = () => {
       <div className="sm:flex hidden">
         {isUserLoggedIn ? (
           <div className="flex gap-3 md:gap-5">
+            <Link href="create-listing" className="extra_light_btn">
+              View Listings
+            </Link>
             <Link href="create-listing" className="light_btn">
               Create Listing
             </Link>

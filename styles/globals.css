@@ -152,6 +152,10 @@
   @apply rounded-full border border-cyan-500 bg-cyan-500 py-1.5 px-5 text-white hover:bg-cyan-400 transition duration-300 ease-in-out text-center text-sm font-inter flex items-center justify-center;
 }
 
+.extra_light_btn {
+  @apply rounded-full border border-gray-50 bg-gray-50 py-1.5 px-5 text-cyan-500 hover:bg-transparent hover:text-gray-50 hover:border-gray-50 transition duration-300 ease-in-out text-center text-sm font-inter flex items-center justify-center;
+}
+
 .dark_btn {
   @apply rounded-full border border-blue-950 bg-blue-950 py-1.5 px-5 text-white hover:bg-blue-800 transition duration-300 ease-in-out text-center text-sm font-inter flex items-center justify-center;
 }

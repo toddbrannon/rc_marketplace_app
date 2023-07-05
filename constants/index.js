@@ -1,3 +1,16 @@
+// listing links
+
+export const listingLinks = [
+  {
+    label: 'View Listings',
+    state: 'viewListings',
+  },
+  {
+    label: 'Create Listing',
+    state: 'createListing',
+  },
+];
+
 // footer links
 
 export const footerLinksCompany= [

@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
-import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
+import { listingLinks } from "@constants";
 
 import { brand } from '@constants';
 
@@ -63,12 +64,15 @@ const Nav = () => {
       <div className="sm:flex hidden">
         {isUserLoggedIn ? (
           <div className="flex gap-3 md:gap-5">
-            <Link href="create-listing" className="extra_light_btn">
-              View Listings
+            
+            <Link href="create-listing" onClick={() => setCurrentState(listingLinks[0].state)} className="outline_btn">
+              {listingLinks[0].label}
             </Link>
-            <Link href="create-listing" className="light_btn">
-              Create Listing
+          
+            <Link href="create-listing" onClick={() => setCurrentState(listingLinks[1].state)} className="extra_light_btn">
+              {listingLinks[1].label}
             </Link>
+          
             <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
             </button>

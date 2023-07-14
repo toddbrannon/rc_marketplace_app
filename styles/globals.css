@@ -132,6 +132,12 @@
   @apply text-gray-200 hover:text-cyan-200 transition duration-300 ease-in-out py-1.5 px-5;
 }
 
+button-container {
+  padding: 10px; /* Adjust the padding value as needed */
+  margin: 0; /* Adjust the margin value as needed */
+  align-items: center; /* Adjust the alignment as needed */
+}
+
 .footer-link {
   @apply text-gray-200 hover:text-cyan-200 duration-300 ease-in-out py-1.5 px-5;
 }

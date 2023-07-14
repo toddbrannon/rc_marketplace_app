@@ -1,5 +1,7 @@
 "use client";
 
+// Create a mobile nav menu that is hidden by default on all screens 1024px and smaller
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
@@ -8,11 +10,11 @@ import { listingLinks } from "@constants";
 
 import { brand } from '@constants';
 
-const Nav = ({ setCurrentState }) => {
+const Nav = () => {
   const isUserLoggedIn = true;
 
   const [providers, setProviders] = useState(null);
-  const [toggleDropdown, settoggleDropdown] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -25,6 +27,10 @@ const Nav = ({ setCurrentState }) => {
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleDropdownToggle = () => {
+    setToggleDropdown(!toggleDropdown);
   };
 
   return (
@@ -43,40 +49,47 @@ const Nav = ({ setCurrentState }) => {
 
       {/* Desktop Navigation - Center */}
       {/* { Sell, Buy, Find a Partner } */}
-      <div className="sm:flex hidden">
-        <div className="flex gap-3 md:gap-5">
-          <Link href="seller-path" className="nav_link">
-              Sell
-          </Link>
-          <Link href="buyer-path" className="nav_link">
-              Buy
-          </Link>
-          <Link href="partnership-path" className="nav_link">
-              Find a Partner
-          </Link>
-        </div>
+      <div className="hidden md:flex gap-3 md:gap-5">
+        <Link href="seller-path" className="nav_link">
+          Sell
+        </Link>
+        <Link href="buyer-path" className="nav_link">
+          Buy
+        </Link>
+        <Link href="partnership-path" className="nav_link">
+          Find a Partner
+        </Link>
       </div>
 
       {/* Desktop Navigation - Right Side */}
-      <div className="sm:flex hidden button-container">
+      <div className="hidden md:flex gap-3 md:gap-5">
         {isUserLoggedIn ? (
           <div className="flex gap-3 md:gap-5">
-            {listingLinks.map((link, index) => (
-              <li className="mb-0" key={index} style={{ listStyleType: "none" }}>
-                <Link href="#" className={link.class} onClick={() => setCurrentState(link.state)}>
-                  {link.label}
-                </Link>
-                
-              </li>           
-            ))}
-              <li className="mb-0" style={{ listStyleType: "none" }}>
-                <Link href="#" className="outline_btn">
-                  Sign Out
-                </Link>
-              </li>  
-            {/* <button type="button" onClick={signOut} className="outline_btn">
+            <div className="relative">
+              <button
+                className="outline_btn"
+                onClick={handleDropdownToggle}
+              >
+                Listings
+              </button>
+              {toggleDropdown && (
+                <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                  {listingLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      href={link.state}
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                      onClick={() => setToggleDropdown(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
-            </button> */}
+            </button>
             <Link href="/profile">
               <Image 
                 src="/assets/images/ProfilePH.svg" 
@@ -100,14 +113,14 @@ const Nav = ({ setCurrentState }) => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="sm:hidden flex relative">
+      <div className="md:hidden flex relative">
         <button
           className="flex items-center focus:outline-none"
           onClick={handleMobileMenuToggle}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-6 w-6 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

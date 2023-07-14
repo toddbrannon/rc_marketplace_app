@@ -3,11 +3,13 @@
 export const listingLinks = [
   {
     label: 'View Listings',
-    state: 'viewListings',
+    state: 'blog',
+    class: 'outline_btn'
   },
   {
     label: 'Create Listing',
-    state: 'createListing',
+    state: 'about',
+    class: 'extra_light_btn'
   },
 ];
 

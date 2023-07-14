@@ -43,10 +43,10 @@ const Footer = ({ setCurrentState }) => (
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
                   <ul className="text-gray-600 dark:text-gray-200 font-medium">
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="footer-link">Twitter</a>
+                          <a href="#" className="footer-link">Twitter</a>
                       </li>
                       <li>
-                          <a href="https://discord.gg/4eeurUVvTy" className="footer-link">Contact Us</a>
+                          <a href="#" className="footer-link">Contact Us</a>
                       </li>
                   </ul>
               </div>
@@ -72,7 +72,7 @@ const Footer = ({ setCurrentState }) => (
                     {socialIcons.map((link, index) => (
                         <li className="mb-4 list-none" key={index}>
                           <a href="#" className="social-link">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d={link.state} clip-rule="evenodd" /></svg>
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d={link.state} clipRule="evenodd" /></svg>
                             <span className="sr-only">LinkedIn page</span>
                           </a>
                         </li>

@@ -3,7 +3,7 @@
 export const listingLinks = [
   {
     label: 'View Listings',
-    state: 'blog',
+    state: 'viewListings',
     class: 'outline_btn'
   },
   {

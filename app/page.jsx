@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <main className="overflow-hidden">
-      {/* <Nav setCurrentState={setCurrentState} /> */}
+      <Nav setCurrentState={setCurrentState} />
 
       {currentState === 'initial' && <Landing />}
       {currentState === 'about' && <About />}
@@ -29,7 +29,7 @@ const Home = () => {
       {currentState === 'blog' && <Blog />}
       {currentState === 'privacyPolicy' && <PrivacyPolicy />}
       {currentState === 'termsAndConditions' && <TermsAndConditions />}   
-      {currentState === 'howItWorks' && <HowItWorks />}    
+      {currentState === 'howItWorks' && <HowItWorks />}
       <Footer setCurrentState={setCurrentState} /> 
       
     </main>

@@ -63,7 +63,7 @@ const Nav = ({ setCurrentState }) => {
           <div className="flex gap-3 md:gap-5">
             {listingLinks.map((link, index) => (
               <li className="mb-0" key={index} style={{ listStyleType: "none" }}>
-                <Link href="#" className={link.class} onClick={() => setCurrentState(link.state)}>
+                <Link href="#" className={link.class} onClick={() => setCurrentState && setCurrentState(link.state)}>
                   {link.label}
                 </Link>
                 

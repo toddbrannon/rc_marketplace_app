@@ -12,6 +12,7 @@ import TermsAndConditions from '@components/TermsAndConditions';
 import HowItWorks from '@components/HowItWorks';
 import Listings from '@components/Listings';
 import CreateListing from '@components/CreateListing';
+import listings from '@pages/listings';
 
 const Home = () => {
 
@@ -24,6 +25,7 @@ const Home = () => {
       {currentState === 'initial' && <Landing />}
       {currentState === 'about' && <About />}
       {currentState === 'viewListings' && <Listings />}
+      {currentState === 'listings' && <listings />}
       {currentState === 'createListing' && <CreateListing />}
       {currentState === 'brandCenter' && <BrandCenter />}
       {currentState === 'blog' && <Blog />}

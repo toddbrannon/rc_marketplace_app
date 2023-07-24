@@ -38,6 +38,7 @@ const Listings = () => {
                 title={listing.title}
                 description={listing.description}
                 askingPrice={listing.askingPrice}
+                ttmGrossRevenue={listing.ttmGrossRevenue}
               />
             ))}
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListingCard = ({ title, category, description, askingPrice }) => {
+const ListingCard = ({ title, category, ttmGrossRevenue,description, askingPrice }) => {
   return (
     // <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12">
     //   <h2 className="text-blue-900 text-3xl font-extrabold mb-2">{title}</h2>
@@ -26,8 +26,9 @@ const ListingCard = ({ title, category, description, askingPrice }) => {
       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{category}</div>
       <p className="mt-2 text-slate-500">{description}</p>
       <p className="mt-2 text-slate-500">Asking Price: {askingPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+      <p className="mt-2 text-slate-500">TTM Gross Revenue: {ttmGrossRevenue.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
       <a href="#" className="learn-more">
-        Learn more
+        More
         <svg
           aria-hidden="true"
           className="w-4 h-4 ml-2"

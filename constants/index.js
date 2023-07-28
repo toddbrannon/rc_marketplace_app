@@ -85,15 +85,15 @@ export const socialIcons = [
 
 export const categoryLabels = [
   {
-    category: 'ecommerce',
+    category: 'eCommerce',
     class: 'ecommerce-label',
   },
   {
-    category: 'saas',
+    category: 'Saas',
     class: 'saas-label',
   },
   {
-    category: 'marketplace',
+    category: 'Marketplace',
     class: 'marketplace-label',
   }
 ]

@@ -83,6 +83,21 @@ export const socialIcons = [
   },
 ]
 
+export const categoryLabels = [
+  {
+    category: 'ecommerce',
+    class: 'ecommerce-label',
+  },
+  {
+    category: 'saas',
+    class: 'saas-label',
+  },
+  {
+    category: 'marketplace',
+    class: 'marketplace-label',
+  }
+]
+
 const CopyrightDate = () => {
     new Date().getFullYear()
 }

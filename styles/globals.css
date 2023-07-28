@@ -138,6 +138,18 @@ button-container {
   align-items: center; /* Adjust the alignment as needed */
 }
 
+.marketplace-label{
+  @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-green-600 bg-green-200 uppercase last:mr-0 mr-1;
+}
+
+.ecommerce-label{
+  @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-orange-600 bg-orange-200 uppercase last:mr-0 mr-1;
+}
+
+.saas-label{
+  @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-fuchsia-600 bg-fuchsia-200 uppercase last:mr-0 mr-1;
+}
+
 .footer-link {
   @apply text-gray-200 hover:text-cyan-200 duration-300 ease-in-out py-1.5 px-5;
 }

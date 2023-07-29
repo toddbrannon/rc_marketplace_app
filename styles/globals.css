@@ -138,6 +138,10 @@ button-container {
   align-items: center; /* Adjust the alignment as needed */
 }
 
+.show-more-link {
+  @apply text-cyan-600 dark:text-cyan-500 transition-colors-underlined hover:underline hover:text-blue-900 ease-in-out font-medium text-sm inline-flex items-center;
+}
+
 .marketplace-label{
   @apply text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-green-600 bg-green-200 uppercase last:mr-0 mr-1;
 }

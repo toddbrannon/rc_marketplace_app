@@ -1,64 +1,65 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { categoryLabels } from "@constants";
 
 const ListingCard = ({ title, category, ttmGrossRevenue, description, askingPrice }) => {
   const categoryLabel = categoryLabels.find((label) => label.category === category);
+  const defaultCategoryLabel = {
+    category: 'Unknown Category',
+    class: 'unknown-category-label',
+  };
+  const { category: labelCategory, class: labelClass } = categoryLabel || defaultCategoryLabel;
+  const [expanded, setExpanded] = useState(false);
+  const descriptionRef = useRef(null);
+  const charactersToShow = 200; // Adjust this value based on your preference
 
-  // Check if categoryLabel is undefined
-  if (!categoryLabel) {
-    // You can choose to render a default label or handle the case in another way
-    // For example, render "Unknown Category" with a default class
-    return (
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12">
-        <div className="mb-4">
-          <span className="default-label-class">
-            Unknown Category
-          </span>
-        </div>
-        <p className="mt-2 text-slate-500 text-sm mb-4">{description}</p>
-        <a href="#" className="learn-more mb-10">
-          More
-          <svg
-            aria-hidden="true"
-            className="w-4 h-4 ml-2"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
-        <p className="mt-2 text-slate-500 text-lg">Asking Price: {askingPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
-        <p className="mt-2 text-slate-500 text-lg">TTM Gross Revenue: {ttmGrossRevenue.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    // Check if description exceeds the limit and show "Show more" link accordingly
+    const descriptionElement = descriptionRef.current;
+    if (descriptionElement) {
+      const truncatedDescription = description.substring(0, charactersToShow);
+      const hasTruncated = description !== truncatedDescription;
+      setExpanded(!hasTruncated); // Set the initial expanded state based on truncation
+    }
+  }, [description, charactersToShow]);
 
-  // If categoryLabel is found, render the card with the correct category label
+  const handleToggleDescription = () => {
+    setExpanded(!expanded);
+  };
+
+
   return (
     <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12">
-      <div className="mb-4">
-        <span className={categoryLabel.class}>
-          {category}
-        </span>
-      </div>
-      <p className="mt-2 text-slate-500 text-sm mb-4">{description}</p>
-      <a href="#" className="learn-more mb-10">
-        More
-        <svg
-          aria-hidden="true"
-          className="w-4 h-4 ml-2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
+    <div className="mb-4">
+      <span className={labelClass}>
+        {labelCategory}
+      </span>
+    </div>
+    {/* Use 'truncate' class to truncate the description */}
+    <p
+      ref={descriptionRef}
+      className={`mt-2 text-slate-500 text-sm mb-4 ${!expanded ? 'truncate' : ''}`}
+    >
+      {expanded ? description : description.substring(0, charactersToShow)}
+    </p>
+    {/* Show "Show more" link/button if the description is truncated */}
+    {!expanded && description.length > charactersToShow && (
+      <button
+        className="show-more-link"
+        onClick={handleToggleDescription}
+      >
+        Show more...
+      </button>
+    )}
+    {/* Show the "Show less" link/button if expanded */}
+    {expanded && description.length > charactersToShow && (
+      <button
+        className="show-more-link"
+        onClick={handleToggleDescription}
+      >
+        Show less
+      </button>
+    )}
+      
       <p className="mt-2 text-slate-500 text-lg">Asking Price: {askingPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
       <p className="mt-2 text-slate-500 text-lg">TTM Gross Revenue: {ttmGrossRevenue.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
     </div>

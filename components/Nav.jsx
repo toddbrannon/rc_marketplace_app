@@ -124,12 +124,13 @@ const Nav = ({ setCurrentState }) => {
           <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
             {isUserLoggedIn ? (
               <div>
+                {/* Updated order of links */}
                 <Link
-                  href="profile"
+                  href="#"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setCurrentState && setCurrentState('viewListings')}
                 >
-                  My Profile
+                  View Listings
                 </Link>
                 <Link
                   href="create-listing"
@@ -137,6 +138,13 @@ const Nav = ({ setCurrentState }) => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Create Listing
+                </Link>
+                <Link
+                  href="profile"
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  My Profile
                 </Link>
                 <button
                   type="button"

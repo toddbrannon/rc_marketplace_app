@@ -20,6 +20,12 @@ module.exports = {
         'bg-cyan-gradient': 'bg-gradient-to-r from-cyan-400 via-cyan-200 to-cyan-100',
         'partnerships-gradient': 'bg-gradient-to-r from-cyan-100 via-cyan-200 to-cyan-300'
       },
+      screens: {
+        sm: '720px', // Change this value to your desired breakpoint
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+      },
       'animation': {
         'text':'text 5s ease infinite;',
       },

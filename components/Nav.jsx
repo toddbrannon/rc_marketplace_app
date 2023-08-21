@@ -46,16 +46,17 @@ const Nav = ({ setCurrentState }) => {
       <div className="sm:flex hidden">
         <div className="flex gap-3 md:gap-5">
           <Link href="seller-path" className="nav_link">
-              Sell
+            Sell
           </Link>
           <Link href="buyer-path" className="nav_link">
-              Buy
+            Buy
           </Link>
           <Link href="partnership-path" className="nav_link">
-              Find a Partner
+            Find a Partner
           </Link>
         </div>
       </div>
+
 
       {/* Desktop Navigation - Right Side */}
       <div className="sm:flex hidden button-container">
@@ -133,9 +134,9 @@ const Nav = ({ setCurrentState }) => {
                   View Listings
                 </Link>
                 <Link
-                  href="create-listing"
+                  href="#"
                   className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setCurrentState && setCurrentState('createListing')}
                 >
                   Create Listing
                 </Link>

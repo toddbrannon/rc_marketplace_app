@@ -8,7 +8,7 @@ export const listingLinks = [
   },
   {
     label: 'Create Listing',
-    state: 'about',
+    state: 'createListing',
     class: 'extra_light_btn'
   },
 ];
@@ -95,7 +95,36 @@ export const categoryLabels = [
   {
     category: 'Marketplace',
     class: 'marketplace-label',
-  }
+  },
+  {
+    category: 'Agency',
+    class: 'agency-label',
+  },
+  {
+    category: 'AI',
+    class: 'ai-label',
+  },
+  {
+    category: 'Mobile App',
+    class: 'mobile-apps-label',
+  },
+  {
+    category: 'Crypto',
+    class: 'crypto-label',
+  },
+  {
+    category: 'Shopify App',
+    class: 'shopify-label',
+  },
+  {
+    category: 'Physical Business',
+    class: 'physical-business-label',
+  },
+  {
+    category: 'Other',
+    class: 'other-label',
+  },
+
 ]
 
 const CopyrightDate = () => {

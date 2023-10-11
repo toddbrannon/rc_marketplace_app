@@ -1,50 +1,54 @@
 import { useState } from 'react';
-import CreateTopSection from '@components/CreateTopSection';
+import { listingFields } from '../constants';
 
 const CreateListing = () => {
   const [formData, setFormData] = useState({
-    category: '',
-    location: {
-      country: '',
-      state: '',
-      city: '',
-      postalCode: '',
-      streetAddress: '',
-    },
-    title: '',
-    description: '',
-    ttmGrossRevenue: '',
-    ttmNetProfit: '',
-    dateFounded: '',
-    teamSize: '',
-    askingPrice: '',
-    askingPriceExplanation: '',
-    businessModelAndPricing: '',
-    techStack: '',
-    productCompetitors: '',
-    growthOpportunity: '',
-    keyAssets: '',
-    reasonForSelling: '',
-    financing: false,
-    lastMonthGrossRevenue: '',
-    lastMonthNetProfit: '',
-    numberOfCustomers: '',
-    annualRecurringRevenue: '',
-    annualGrowthRate: '',
-    arr: '',
-    mrr: '',
-    arpa: '',
-    ltv: '',
-    customerChurn: '',
-    netMrrChurnRate: '',
+    // initialize form data with empty values for all fields
+      category: '',
+      location: {
+        country: '',
+        state: '',
+        city: '',
+        postalCode: '',
+        streetAddress: '',
+      },
+      title: '',
+      description: '',
+      ttmGrossRevenue: '',
+      ttmNetProfit: '',
+      dateFounded: '',
+      teamSize: '',
+      askingPrice: '',
+      askingPriceExplanation: '',
+      businessModelAndPricing: '',
+      techStack: '',
+      productCompetitors: '',
+      growthOpportunity: '',
+      keyAssets: '',
+      reasonForSelling: '',
+      financing: false,
+      lastMonthGrossRevenue: '',
+      lastMonthNetProfit: '',
+      numberOfCustomers: '',
+      annualRecurringRevenue: '',
+      annualGrowthRate: '',
+      arr: '',
+      mrr: '',
+      arpa: '',
+      ltv: '',
+      customerChurn: '',
+      netMrrChurnRate: '',
+    ...Object.fromEntries(listingFields.map((field) => [field.name, ''])),
   });
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
+  const [currentSection, setCurrentSection] = useState(1);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (event) => {
@@ -55,383 +59,166 @@ const CreateListing = () => {
     console.log(formData);
   };
 
+  const handleBack = () => {
+    setCurrentSection(currentSection - 1);
+  };
+
+  const handleNext = () => {
+    setCurrentSection(currentSection + 1);
+  };
+
   return (
-    <section className="bg-inherit dark:bg-inherit">
-        <div className="py-8 px-4 lg:py-16">
-          <CreateTopSection />
-    <div className="max-w-xl mx-auto px-4 py-8">
-      <h2 className="text-blue-950 dark:text-gray-200 text-2xl font-semibold mb-4">Create a New Listing</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Category</label>
-          <input
-            type="text"
-            name="category"
-            value={formData.category}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
+    <section className="py-6 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:text-center">
+          <h2 className="text-base text-blue-950 dark:text-gray-200 font-semibold tracking-wide uppercase">
+            Create a new listing
+          </h2>
         </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Country</label>
-          <input
-            type="text"
-            name="location.country"
-            value={formData.location.country}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
+        <div className="mt-10 sm:mt-0">
+          <form onSubmit={handleSubmit} className="space-y-8 divide-y divide-gray-200 dark:divide-gray-700">
+            {currentSection === 1 && (
+              <div className="space-y-8 divide-y divide-gray-200 dark:divide-gray-700">
+                <div className="pt-8">
+                  <div>
+                    <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">Listing Information</h3>
+                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                      Use a permanent address where you can receive mail.
+                    </p>
+                  </div>
+                  <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                    {listingFields.slice(0, 6).map((field) => (
+                      <div key={field.name} className={`sm:col-span-${field.colSpan}`}>
+                        <label htmlFor={field.name} className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                          {field.label}
+                        </label>
+                        <div className="mt-1">
+                          {field.type === 'text' && (
+                            <input
+                              type="text"
+                              name={field.name}
+                              id={field.name}
+                              autoComplete="off"
+                              value={formData[field.name]}
+                              onChange={handleChange}
+                              className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                            />
+                          )}
+                          {field.type === 'textarea' && (
+                            <textarea
+                              name={field.name}
+                              id={field.name}
+                              rows={field.rows}
+                              value={formData[field.name]}
+                              onChange={handleChange}
+                              className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                            />
+                          )}
+                          {/* add more input types here */}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="pt-5">
+                  <div className="flex justify-end">
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-950 hover:bg-blue-850 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            {currentSection === 2 && (
+              <div className="space-y-8 divide-y divide-gray-200 dark:divide-gray-700">
+                <div className="pt-8">
+                  <div>
+                    <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">Section 2</h3>
+                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                      Section 2 description.
+                    </p>
+                  </div>
+                  <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                    {listingFields.slice(6, 12).map((field) => (
+                      <div key={field.name} className={`sm:col-span-${field.colSpan}`}>
+                        <label htmlFor={field.name} className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                          {field.label}
+                        </label>
+                        <div className="mt-1">
+                          {field.type === 'text' && (
+                            <input
+                              type="text"
+                              name={field.name}
+                              id={field.name}
+                              autoComplete="off"
+                              value={formData[field.name]}
+                              onChange={handleChange}
+                              className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                            />
+                          )}
+                          {field.type === 'textarea' && (
+                            <textarea
+                              name={field.name}
+                              id={field.name}
+                              rows={field.rows}
+                              value={formData[field.name]}
+                              onChange={handleChange}
+                              className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                            />
+                          )}
+                          {/* add more input types here */}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="pt-5">
+                  <div className="flex justify-between">
+                    <button
+                      type="button"
+                      onClick={handleBack}
+                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-blue-950 dark:text-gray-200 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      Back
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-950 hover:bg-blue-850 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            {/* add more sections */}
+            {currentSection === 3 && (
+              <div className="pt-5">
+                <div className="flex justify-between">
+                  <button
+                    type="button"
+                    onClick={handleBack}
+                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-blue-950 dark:text-gray-200 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-950 hover:bg-blue-850 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  >
+                    Create Listing
+                  </button>
+                </div>
+              </div>
+            )}
+          </form>
         </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">State</label>
-          <input
-            type="text"
-            name="location.state"
-            value={formData.location.state}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">City</label>
-          <input
-            type="text"
-            name="location.city"
-            value={formData.location.city}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Postal Code</label>
-          <input
-            type="text"
-            name="location.postalCode"
-            value={formData.location.postalCode}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Street Address</label>
-          <input
-            type="text"
-            name="location.streetAddress"
-            value={formData.location.streetAddress}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Title</label>
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Description</label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">TTM Gross Revenue</label>
-          <input
-            type="text"
-            name="ttmGrossRevenue"
-            value={formData.ttmGrossRevenue}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">TTM Net Profit</label>
-          <input
-            type="text"
-            name="ttmNetProfit"
-            value={formData.ttmNetProfit}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Date Founded</label>
-          <input
-            type="text"
-            name="dateFounded"
-            value={formData.dateFounded}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Team Size</label>
-          <input
-            type="text"
-            name="teamSize"
-            value={formData.teamSize}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Asking Price</label>
-          <input
-            type="text"
-            name="askingPrice"
-            value={formData.askingPrice}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Asking Price Explanation
-          </label>
-          <textarea
-            name="askingPriceExplanation"
-            value={formData.askingPriceExplanation}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Business Model and Pricing
-          </label>
-          <textarea
-            name="businessModelAndPricing"
-            value={formData.businessModelAndPricing}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Tech Stack</label>
-          <textarea
-            name="techStack"
-            value={formData.techStack}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Product Competitors
-          </label>
-          <textarea
-            name="productCompetitors"
-            value={formData.productCompetitors}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Growth Opportunity</label>
-          <textarea
-            name="growthOpportunity"
-            value={formData.growthOpportunity}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Key Assets</label>
-          <textarea
-            name="keyAssets"
-            value={formData.keyAssets}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Reason for Selling</label>
-          <textarea
-            name="reasonForSelling"
-            value={formData.reasonForSelling}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Financing</label>
-          <input
-            type="checkbox"
-            name="financing"
-            checked={formData.financing}
-            onChange={handleInputChange}
-            className="border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Last Month Gross Revenue
-          </label>
-          <input
-            type="text"
-            name="lastMonthGrossRevenue"
-            value={formData.lastMonthGrossRevenue}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Last Month Net Profit
-          </label>
-          <input
-            type="text"
-            name="lastMonthNetProfit"
-            value={formData.lastMonthNetProfit}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Number of Customers</label>
-          <input
-            type="text"
-            name="numberOfCustomers"
-            value={formData.numberOfCustomers}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Annual Recurring Revenue
-          </label>
-          <input
-            type="text"
-            name="annualRecurringRevenue"
-            value={formData.annualRecurringRevenue}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Annual Growth Rate</label>
-          <input
-            type="text"
-            name="annualGrowthRate"
-            value={formData.annualGrowthRate}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">ARR</label>
-          <input
-            type="text"
-            name="arr"
-            value={formData.arr}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">MRR</label>
-          <input
-            type="text"
-            name="mrr"
-            value={formData.mrr}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">ARPA</label>
-          <input
-            type="text"
-            name="arpa"
-            value={formData.arpa}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">LTV</label>
-          <input
-            type="text"
-            name="ltv"
-            value={formData.ltv}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">Customer Churn</label>
-          <input
-            type="text"
-            name="customerChurn"
-            value={formData.customerChurn}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block font-medium mb-1">
-            Net MRR Churn Rate
-          </label>
-          <input
-            type="text"
-            name="netMrrChurnRate"
-            value={formData.netMrrChurnRate}
-            onChange={handleInputChange}
-            className="w-full border-gray-300 rounded-md p-2"
-          />
-        </div>
-
-
-        <div className="mt-6">
-          <button
-            type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-          >
-            Create Listing
-          </button>
-        </div>
-      </form>
-    </div>
-    </div>
+      </div>
     </section>
   );
 };

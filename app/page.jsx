@@ -11,7 +11,7 @@ import PrivacyPolicy from '@components/PrivacyPolicy';
 import TermsAndConditions from '@components/TermsAndConditions';
 import HowItWorks from '@components/HowItWorks';
 import Listings from '@components/Listings';
-import CreateListing from '@components/CreateListing';
+import CreateListing from '@components/CreateListing_orig';
 import listings from '@pages/listings';
 
 const Home = () => {

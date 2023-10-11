@@ -83,7 +83,7 @@ const CreateListing = () => {
             <option value="Mobile App">Mobile App</option>
             <option value="Other">Other</option>
             <option value="Physical Business">Physical Business</option>
-            <option value="Saas">Saas</option>
+            <option value="Saas">SaaS</option>
             <option value="Shopify App">Shopify App</option>
           </select>
         </div>
